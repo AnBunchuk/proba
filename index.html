@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bunchuk HW20</title>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+    <main>
+        <section>
+            <picture>
+                <img src="img/home.png" alt="MDN">
+            </picture>
+            <article>
+                <form name="calc">
+                    <lable for="type_home">Выберите тип помещения</lable>
+                    <br>
+                    <input id="type_home" list="home">
+                    <datalist id="home" size="3">
+                        <option data-value="200" value="офис"></option>
+                        <option data-value="100" value="квартира"></option>
+                        <option data-value="300" value="дом"></option>
+                    </datalist>
+                </form>
+                <form name="calc">
+                    <lable for="type_room">Укажте название и площадь комнаты</lable>
+                    <br>
+                    <input id="type_room" list="room">
+                    <datalist id="room" class="room">
+                        <option value="спальня"></option>
+                        <option value="гостинная"></option>
+                        <option value="коридор"></option>
+                        <option value="санузел"></option>
+                        <option value="балкон"></option>
+                        <option value="кабинет"></option>
+                        <option value="приемная"></option>
+                    </datalist>
+                    <input id="square" type="number" min="1" step="0.01">
+                    <input id="+" value="+">
+                    <!-- type="submit" -->
+                </form>
+
+                <div id="data_select" class="data_select">
+                    <!-- //////////////////////////// -->
+                    <!-- <div>
+                        <span class="home">офис</span>
+                        <span class="room"> спальня</span>
+                        <span class="metr">22м.кв</span>
+                        <span class="price">350</span>
+                        <span> грн</span>
+                        <input id="-" value="-">
+                    </div>
+                    ///////////////////////////////// -->
+                </div>
+
+
+                <form name="calc" class="border-bottom">
+                    <input id="itog" class="button" value="Рассчитать">
+                    <!-- type="submit" -->
+                    <p>Приблизительная стоимость ремонта</p>
+                    <p><span class="price2">0.00</span><span> uah</span></p>
+                </form>
+            </article>
+
+        </section>
+    </main>
+    <script src="js/mains.js"></script>
+    <script>
+        const objCalc = {
+            wrapper: 'article',
+            form: 'form',
+            dataSelect: 'data_select',
+            input: 'type_home',
+            img: 'img'
+        }
+
+        const myCalc = new Calc(objCalc);
+
+        myCalc.init()
+    </script>
+
+</body>
+
+</html>
